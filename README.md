@@ -5,8 +5,8 @@ Enumerated demos and lessons progressing through different features of CAN and J
 ### Arduino
 This repository was written and tested with Arduino Version 1.8.1 downloaded on 17 March 2017
 from https://www.arduino.cc/en/main/software 
-###Teensyduino 
 
+### Teensyduino 
 Teensyduino version 1.35 downloaded on 17 March 2017
 from https://www.pjrc.com/teensy/td_download.html
 
@@ -16,11 +16,12 @@ These two packages were installed on Windows 7 x64 using the defaults for the ex
 The FlexCAN Library used in these examples is from a fork of https://github.com/collin80/FlexCAN_Library
 This library was installed on March 18, 2017. It will conflict with the Library for FlexCAN that was shipped with Teensyduino.
 You may get a message (if you have the verbosity high) that says: 
-
-```Multiple libraries were found for "FlexCAN.h"
- Used: C:\Program Files (x86)\Arduino\hardware\teensy\avr\libraries\FlexCAN
- Not used: C:\Users\jeremy-daily\Documents\Arduino\libraries\FlexCAN_Library
-Using library FlexCAN in folder: C:\Program Files (x86)\Arduino\hardware\teensy\avr\libraries\FlexCAN (legacy)```
+   ```
+   Multiple libraries were found for "FlexCAN.h"
+   Used: C:\Program Files (x86)\Arduino\hardware\teensy\avr\libraries\FlexCAN
+   Not used: C:\Users\jeremy-daily\Documents\Arduino\libraries\FlexCAN_Library
+   Using library FlexCAN in folder: C:\Program Files (x86)\Arduino\hardware\teensy\avr\libraries\FlexCAN (legacy)
+   ```
 
 It is recommended to remove the folder with the original FlexCAN library so you know which library the software is using to compile.
 
