@@ -50,11 +50,20 @@ It is recommended to remove the folder with the original FlexCAN library so you 
 5. Send simple messages in a schedule related to count and time.
    * Starts with the first example
    * Sets up an elapsedMillis timer to schedule transmission of messages.
-6. Log all RX data to an SD Card
+   * Converts 32-bit numbers into CAN bytes with masking and bit shifting
+6. Interpret some signals from J1939
+   * Parses the extended CAN ID into parameter group number (PGN), source address (SA), destination address (DA), and priorty
+   * Displays J1939 data
+   * Interprets data based on PGNs for Cruise-Control Wheel Speed, Vehicle Distance, Engine Electronic Controller and High Resolution Vehicle Distance. 
+   * Displays some signals defined in the standard.
+   * Receive messages are gathered based on Polling.
+
+### Future Lessons
+
 7. Perform an test to determine baudrate before entering the logging loop. Sometimes this is refered to as autobaud.
 8. Send simple messages on both channels for the Teensy 3.6
 9. Transmit a quadrature encoder input counter on CAN.
-10. Interpret J1939 Wheel Based Vehicle Speed and Engine Speed
+10. Interpret J1939 Wheel Based Vehicle Speed and Engine Speed based on interrupts and masks
 11. Respond to J1939 requests for Component ID
 12. Request J1939 Component ID
 13. Send arbitrary messages over J1939 Transport Layer
