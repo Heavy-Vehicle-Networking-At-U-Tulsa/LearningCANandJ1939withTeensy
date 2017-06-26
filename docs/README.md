@@ -1,0 +1,1 @@
+These file have the information regarding the hardware platform. There have been multiple versions produced, so you will have to check the date on the board and match it to the date on the schematics. The first version did not have and NFET driver. 
