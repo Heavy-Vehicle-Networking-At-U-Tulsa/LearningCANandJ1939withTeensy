@@ -32,7 +32,7 @@ void setup() {
 
 void loop() {
   // put your main code here, to run repeatedly:
-  while (Can0.available()) {
+  if (Can0.available()) {
     Can0.read(rxmsg);
     RXCount++;
     CANRXTimer = 0;

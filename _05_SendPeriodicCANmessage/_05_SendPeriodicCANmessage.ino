@@ -41,7 +41,7 @@ void loop() {
   // put your main code here, to run repeatedly:
 
   //Poll for new messages
-  while (Can0.available()) {
+  if (Can0.available()) {
     Can0.read(rxmsg);
     char CANdataDisplay[50];
     sprintf(CANdataDisplay, "%12lu %12lu %08X %d %d", RXCount++, micros(), rxmsg.id, rxmsg.ext, rxmsg.len);
@@ -75,4 +75,15 @@ void loop() {
     LEDstate = !LEDstate;
     digitalWrite(LED_BUILTIN, LEDstate);
   }
+
+  /*
+   * CHALLENGE Problems:
+   * 
+   * 1. Request component information from an ECU.  You may need to look for a response.
+   * 2. Develop a bus flooding device
+   * 3. 
+   */
+
+
+  
 }

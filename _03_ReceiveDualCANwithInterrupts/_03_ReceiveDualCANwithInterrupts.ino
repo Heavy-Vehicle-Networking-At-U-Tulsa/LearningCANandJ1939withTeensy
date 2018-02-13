@@ -1,3 +1,6 @@
+#include <FlexCAN.h>
+#include <kinetis_flexcan.h>
+
 /*
    Object Oriented CAN example for Teensy 3.6 with Dual CAN buses
    By Jeremy Daily. Based on the work by Collin Kidder, who based his
@@ -9,7 +12,6 @@
    For high busloads, this sketch will lockup.
 */
 
-#include <FlexCAN.h>
 
 #ifndef __MK66FX1M0__
 #error "Teensy 3.6 with dual CAN bus is required to run this example"
@@ -18,7 +20,7 @@
 
 //These baudrates are used on some newer Freightliners
 #define BAUDRATE0 250000
-#define BAUDRATE1 666000
+#define BAUDRATE1 666666
 
 //Create a counter to keep track of message traffic
 uint32_t RXCount0 = 0;
@@ -80,7 +82,7 @@ void setup() {
   Can0.attachObj(&myCANClassInstance);
   Can1.attachObj(&myCANClassInstance);
 
-  for (uint8_t filterNum = 0; filterNum < 16; filterNum++) {
+  for (uint8_t filterNum = 4; filterNum < 16; filterNum++) {
     myCANClassInstance.attachMBHandler(filterNum);
 
   }
