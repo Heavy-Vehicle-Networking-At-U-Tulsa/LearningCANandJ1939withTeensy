@@ -23,6 +23,7 @@ void setup() {
   
   //Start the CAN message on the first CAN controller (works on both the Teensy 3.2 and Teensy 3.6)
   Can0.begin(250000);
+  Can1.begin(500000);
 
   //The default filters exclude the extended IDs, so we have to set up CAN filters to allow those to pass.
   CAN_filter_t allPassFilter;
@@ -71,7 +72,8 @@ void loop() {
     txmsg.buf[6] = (TXCount & 0x0000FF00) >>  8;
     txmsg.buf[7] = (TXCount & 0x000000FF);
     Can0.write(txmsg);
-
+    Can1.write(txmsg);
+    
     LEDstate = !LEDstate;
     digitalWrite(LED_BUILTIN, LEDstate);
   }
